@@ -19,7 +19,7 @@ const MyOrder = () => {
     const [condition,setCondition]=useState(true)
    
     useEffect(() => {
-        fetch(`http://localhost:5000/userorder?email=${user.email}`)
+        fetch(`https://sheltered-crag-05668.herokuapp.com/userorder?email=${user.email}`)
           .then(res=>res.json())
           .then(data=>setOrder(data))
       }, [user.email,condition]);
@@ -29,7 +29,7 @@ const MyOrder = () => {
 
         const procide = window.confirm("want to delete")
         if(procide){
-            fetch(`http://localhost:5000/delete/${id}`
+            fetch(`https://sheltered-crag-05668.herokuapp.com/delete/${id}`
         ,{
             method:'DELETE'
         })

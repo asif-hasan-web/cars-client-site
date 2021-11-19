@@ -13,7 +13,7 @@ const PlaceOrder = () => {
   const { displayName, email } = useContexts();
   
   useEffect(() => {
-      fetch(`http://localhost:5000/placeorder/${id}`)
+      fetch(`https://sheltered-crag-05668.herokuapp.com/placeorder/${id}`)
       .then(res => res.json())
       .then(data =>{
           if(data._id){
@@ -30,7 +30,7 @@ const PlaceOrder = () => {
     console.log(data);
     console.log(product);
     const newdata = {name:data.name,email:data.email,about:product.about,img:product.img}
-      axios.post('http://localhost:5000/placeorder'
+      axios.post('https://sheltered-crag-05668.herokuapp.com/placeorder'
       , newdata)
       .then(res=>{
           console.log(res.data)

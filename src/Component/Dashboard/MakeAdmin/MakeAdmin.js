@@ -8,7 +8,7 @@ const MakeAdmin = () => {
 
     const handleSubmit=()=>{
         console.log(email);
-        fetch( `http://localhost:5000/addadmin?email=${email}`,
+        fetch( `https://sheltered-crag-05668.herokuapp.com/addadmin?email=${email}`,
             {
                 method:'POST'
             }

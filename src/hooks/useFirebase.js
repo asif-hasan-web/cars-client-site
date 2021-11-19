@@ -61,10 +61,10 @@ const useFirebase = () => {
     return () => unsubscribe;
   }, []);
   
-
+  
   // adminnn
   useEffect(() => {
-   fetch(`http://localhost:5000/isadmin?email=${user?.email}`)
+   fetch(`https://sheltered-crag-05668.herokuapp.com/isadmin?email=${user?.email}`)
    
    .then(res=>res.json())
    .then(data=>setCheck(data))
@@ -75,7 +75,7 @@ const useFirebase = () => {
 //add user
   const addUserName=(name,email)=>{
     const data = {name,email}
-      fetch("http://localhost:5000/adduser",{
+      fetch("https://sheltered-crag-05668.herokuapp.com/adduser",{
         method:'POST',
         headers:{'content-type':'application/json'},
         body:JSON.stringify(data)
@@ -85,7 +85,7 @@ const useFirebase = () => {
 //update user
   const updateUserName=(name,email)=>{
     const data = {name,email}
-      fetch("http://localhost:5000/updateuser",{
+      fetch("https://sheltered-crag-05668.herokuapp.com/updateuser",{
         method:'PUT',
         headers:{'content-type':'application/json'},
         body:JSON.stringify(data)

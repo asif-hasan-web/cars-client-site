@@ -18,7 +18,7 @@ const ManageProduct = () => {
     const [condition,setCondition]=useState(true)
    
     useEffect(() => {
-        fetch(`http://localhost:5000/shop`)
+        fetch(`https://sheltered-crag-05668.herokuapp.com/shop`)
           .then(res=>res.json())
           .then(data=>setOrder(data))
       }, [,condition]);
@@ -28,7 +28,7 @@ const ManageProduct = () => {
 
         const procide = window.confirm("want to delete")
         if(procide){
-            fetch(`http://localhost:5000/delete/${id}`
+            fetch(`https://sheltered-crag-05668.herokuapp.com/delete/${id}`
         ,{
             method:'DELETE'
         })
